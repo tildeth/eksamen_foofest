@@ -1,11 +1,11 @@
 import React from 'react';
+import LandingPageTop from '@/components/LandingPageTop';
 
 const Home = () => {
   return (
-    <div>
-      <h1>Velkommen til festivalen!</h1>
-      <p>Book dine billetter her!</p>
-    </div>
+    <>
+      <LandingPageTop />
+    </>
   );
 };
 

@@ -9,8 +9,13 @@ export function BookingProvider({ children }) {
     const [area, setArea] = useState(null);
     const [resId, setResId] = useState(null);
 
+     // Tilføj timer og isTimerActive
+     const [timer, setTimer] = useState(300); // Timer starter ved 300 sekunder (5 minutter)
+     const [isTimerActive, setIsTimerActive] = useState(false); // Timerens status (aktiv/inaktiv)
+
     return (
-        <BookingContext.Provider value={{ billetter, setBilletter, area, setArea, resId, setResId }}>
+        <BookingContext.Provider value={{ billetter, setBilletter, area, setArea, resId, setResId,  timer, setTimer, 
+            isTimerActive, setIsTimerActive }}>
             {children}
         </BookingContext.Provider>
     );
