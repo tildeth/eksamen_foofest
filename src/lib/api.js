@@ -83,3 +83,85 @@ export const cancelReservation = async (id) => {
     throw error;
   }
 };
+
+//********DEL 2*******
+
+// Hent alle bands
+export const fetchBands = async () => {
+  try {
+    const response = await fetch(`${baseUrl}/bands`, {
+      method: "GET",
+      headers,
+    });
+
+    if (!response.ok) {
+      throw new Error("Fejl ved hentning af bands");
+    }
+
+    const data = await response.json();
+    return data; // Returnerer alle bands
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+// Hent et band baseret på slug
+export const fetchBandBySlug = async (slug) => {
+  try {
+    const response = await fetch(`${baseUrl}/bands/${slug}`, {
+      method: "GET",
+      headers,
+    });
+
+    if (!response.ok) {
+      throw new Error(`Fejl ved hentning af band med slug: ${slug}`);
+    }
+
+    const data = await response.json();
+    return data; // Returnerer information om et specifikt band
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+// Hent festivalens tidsplan
+export const fetchSchedule = async () => {
+  try {
+    const response = await fetch(`${baseUrl}/schedule`, {
+      method: "GET",
+      headers,
+    });
+
+    if (!response.ok) {
+      throw new Error("Fejl ved hentning af tidsplan");
+    }
+
+    const data = await response.json();
+    return data; // Returnerer festivalens tidsplan
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+// Hent eventlog (ændringer og aflysninger)
+export const fetchEventLog = async () => {
+  try {
+    const response = await fetch(`${baseUrl}/events`, {
+      method: "GET",
+      headers,
+    });
+
+    if (!response.ok) {
+      throw new Error("Fejl ved hentning af event log");
+    }
+
+    const data = await response.json();
+    return data; // Returnerer event-loggen
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
