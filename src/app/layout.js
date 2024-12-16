@@ -1,5 +1,7 @@
 import NavMenu from "@/components/NavMenu";
-import styles from "../styles/Layout.module.css"; 
+import styles from "@/styles/Layout.module.css"; 
+import '@/styles/globals.css';
+import Footer from "@/components/Footer";
 
 const Layout = ({ children }) => {
     return (
@@ -8,6 +10,7 @@ const Layout = ({ children }) => {
             <main className={styles.main}>
                 {children}
             </main>
+            <Footer />
         </div>
     );
 };

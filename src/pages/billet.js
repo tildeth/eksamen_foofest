@@ -1,6 +1,7 @@
 import { useBooking } from "@/context/BookingContext";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import styles from "@/styles/Billet.module.css";
 
 export default function Billet(){
     const {billetter, setBilletter} = useBooking();
@@ -35,32 +36,46 @@ export default function Billet(){
     const decreaseVip = () => setVip(vip > 0 ? vip - 1 : 0);
 
 
-    return(
-        <section>
-            <h1>Vælg biletter</h1>
-            <div>
-                <label>
-                    Standard (799,-)
-                    <button type="button" onClick={decreaseRegular}>-</button>
-                    <span>{regular}</span>
-                    <button type="button" onClick={increaseRegular}>+</button>
-                </label>
-            </div>
-            <div>
-                <label>
-                    VIP (1299,-)
-                    <button type="button" onClick={decreaseVip}>-</button>
-                    <span>{vip}</span>
-                    <button type="button" onClick={increaseVip}>+</button>
-                </label>
-            </div>
-            <div>
-                <h2>Samlet pris: {totalPrice} kr. {totalTickets} stk.</h2>
-            </div>
-            <p style={{ fontSize: "smaller", color: "gray" }}>
-                Billetgebyr: {ticketFee} kr.
-            </p>
-            <button onClick={videreCamping}>Forsæt til valg af campingplads</button>
+    return (
+        <section className={styles.ticketSection}>
+          <h1 className={styles.heading}>Vælg billetter</h1>
+          <div className={styles.ticketType}>
+            <label className={styles.ticketLabel}>
+              Standard (799,-)
+              <div className={styles.counter}>
+                <button type="button" className={styles.counterButton} onClick={decreaseRegular}>
+                  -
+                </button>
+                <span className={styles.ticketCount}>{regular}</span>
+                <button type="button" className={styles.counterButton} onClick={increaseRegular}>
+                  +
+                </button>
+              </div>
+            </label>
+          </div>
+          <div className={styles.ticketType}>
+            <label className={styles.ticketLabel}>
+              VIP (1299,-)
+              <div className={styles.counter}>
+                <button type="button" className={styles.counterButton} onClick={decreaseVip}>
+                  -
+                </button>
+                <span className={styles.ticketCount}>{vip}</span>
+                <button type="button" className={styles.counterButton} onClick={increaseVip}>
+                  +
+                </button>
+              </div>
+            </label>
+          </div>
+          <div className={styles.summary}>
+            <h2 className={styles.total}>
+              Samlet pris: <span>{totalPrice} kr.</span> ({totalTickets} stk.)
+            </h2>
+            <p className={styles.fee}>Billetgebyr: {ticketFee} kr.</p>
+          </div>
+          <button className={styles.nextButton} onClick={videreCamping}>
+            Fortsæt til valg af campingplads
+          </button>
         </section>
-    );
-}
+      );
+    }

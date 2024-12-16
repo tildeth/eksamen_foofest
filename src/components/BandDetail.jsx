@@ -1,6 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { fetchBandBySlug } from "@/lib/api";
+import styles from "@/styles/BandDetail.module.css"
+import BandImage from "./BandImage";
 
 const BandDetail = () => {
     const [band, setBand] = useState(null);
@@ -28,16 +30,28 @@ const BandDetail = () => {
 
     if (!band) return <div>Band not found</div>;
 
-    return (  
-        <section>
-        <h2>{band.name}</h2>
-        <img src={band.logo.startsWith("https://") ? band.logo : `https://YOUR-APP.glitch.me/logos/${band.logo}`} alt={`${band.name} logo`} />
-        {band.logoCredits && <p>Logo kreditering: {band.logoCredits}</p>}
-        <p><strong>Genre:</strong> {band.genre}</p>
-        <p><strong>Members:</strong> {band.members.join(", ")}</p>
-        <p><strong>Bio:</strong> {band.bio}</p>
-      </section>
-    );
-}
+    return (
+    <section className={styles.bandDetail}>
+      <h2 className={styles.bandName}>{band.name}</h2>
+      <div className={styles.imageContainer}>
+        <BandImage logo={band.logo}  bandName={band.name} />
+      </div>
+      <p className={styles.info}>
+        <strong>Genre:</strong> {band.genre}
+      </p>
+      <p className={styles.info}>
+        <strong>Members:</strong> {band.members.join(", ")}
+      </p>
+      <p className={styles.info}>
+        <strong>Bio:</strong> {band.bio}
+      </p>
+      <p className={styles.info}>
+        <strong>Credits:</strong> {band.logoCredits}
+      </p>
+    </section>
+  );
+};
  
 export default BandDetail;
+
+ 

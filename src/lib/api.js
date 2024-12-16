@@ -146,22 +146,4 @@ export const fetchSchedule = async () => {
   }
 };
 
-// Hent eventlog (ændringer og aflysninger)
-export const fetchEventLog = async () => {
-  try {
-    const response = await fetch(`${baseUrl}/events`, {
-      method: "GET",
-      headers,
-    });
 
-    if (!response.ok) {
-      throw new Error("Fejl ved hentning af event log");
-    }
-
-    const data = await response.json();
-    return data; // Returnerer event-loggen
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-};

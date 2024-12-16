@@ -1,12 +1,14 @@
+"use client"
+
 import Link from "next/link";
-import styles from "@/styles/NavMenu.module.css"
+import styles from "@/styles/NavMenu.module.css";
 
 const NavMenu = () => {
   return (
     <nav className={styles.nav}>
       <div className={styles.logo}>
         <Link href="/">
-          LOGO
+          FooFest
         </Link>
       </div>
 

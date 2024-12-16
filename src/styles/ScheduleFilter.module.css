@@ -1,0 +1,29 @@
+/* ScheduleFilter.module.css */
+.scheduleFilter {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filterSelect {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid var(--muted-color-light); /* Brug den globale muted farve */
+  border-radius: 5px;
+  outline: none;
+  width: 45%;
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+  box-sizing: border-box;
+}
+
+.filterSelect:focus {
+  border-color: var(--primary-color-light); /* Brug den globale primære farve */
+}
+
+.filterLabel {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+  color: var(--text-color-light); /* Brug den globale tekstfarve */
+}

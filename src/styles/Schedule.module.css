@@ -1,0 +1,81 @@
+.scheduleSection {
+  padding: 2rem;
+
+
+  .sceneSchedule {
+    margin-bottom: 3rem;
+  }
+  
+  .daySchedule {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color-light);
+  }
+  
+  h4 {
+    font-size: 1.25rem;
+    color: var(--primary-color-light);
+  }
+  
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr)); /* Grid med automatisk justering */
+    gap: 3rem;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .slot {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Auto-højde til overskrifter og indhold, fleksibel plads til andet indhold */
+    background-color: var(--background-color-light);
+    padding: 1rem;
+    border-radius: 8px;
+    
+    height: 100%; 
+    justify-items: stretch; /* Sørger for, at indholdet flugter korrekt */
+    margin-bottom: 20px;
+  
+   
+    p {
+      margin: 0;
+      font-size: 1rem;
+      color: var(--text-color-light);
+    }
+  
+  }
+
+    .slot_strong {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-color-light);
+    }
+  
+  
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .scheduleHeader {
+    font-size: 1.5rem;
+
+    
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+  }
+
+}

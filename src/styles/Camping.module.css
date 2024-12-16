@@ -1,0 +1,74 @@
+.campingSection {
+    padding: 2rem;
+    background-color: var(--background-color-light);
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 2rem auto;
+  }
+  
+  .heading {
+    font-size: 1.8rem;
+    text-align: center;
+    color: var(--primary-color-light);
+  }
+  
+  .pladsList {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  
+  .pladsItem label {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background: var(--background-color-dark);
+    border-radius: 4px;
+    color: var(--text-color-light);
+  }
+  
+  .option {
+    margin: 1rem 0;
+  }
+  
+  .tentSection {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .tentOption {
+    flex: 1;
+  }
+  
+  .tentControls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .tentInput {
+    width: 50px;
+    text-align: center;
+  }
+  
+  .controlButton {
+    background: var(--primary-color-light);
+    color: var(--text-color-light);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .totalPrice {
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .submitButton {
+    display: block;
+    margin: 1rem auto;
+    background: var(--secondary-color-light);
+    padding: 1rem;
+  }
+  

@@ -1,0 +1,86 @@
+@import url("https://use.typekit.net/nda5hzm.css");
+
+:root {
+    /* Lys tilstand - Standard farver */
+    --primary-color-light: #ff007f; /* Pink */
+    --secondary-color-light: #0e0e0e; /* Sort */
+    --accent-color-light: #ffc0cb; /* Lys pink */
+    --background-color-light: #e4e4e4; /* Hvid baggrund */
+    --text-color-light: #0e0e0e; /* Sort tekst */
+    --muted-color-light: #888888; /* Lysere grå til mindre elementer */
+
+    /* Mørk tilstand - Farver tilpasset mørkt tema */
+    --primary-color-dark: #ff007f; /* Pink */
+    --secondary-color-dark: #0e0e0e; /* Sort */
+    --accent-color-dark: #ffc0cb; /* Lys pink */
+    --background-color-dark: #0f0f0f; /* Mørk baggrund */
+    --text-color-dark: #e4e4e4; /* Hvid tekst */
+    --muted-color-dark: #888888; /* Lysere grå til mindre elementer */
+}
+
+/* Standard farver (lyst tema) */
+body {
+    font-family: "museo-sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "ocr-a-std", monospace;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--primary-color-light);
+    text-transform: uppercase;
+}
+
+/* Lys tilstand - farver */
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: var(--background-color-light);
+        color: var(--text-color-light);
+    }
+
+    a {
+        color: var(--primary-color-light);
+    }
+
+    button {
+        background-color: var(--primary-color-light);
+        color: var(--accent-color-light);
+    }
+
+    button:hover {
+        background-color: var(--secondary-color-light);
+        color: var(--primary-color-light);
+    }
+}
+
+/* Mørk tilstand - farver */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--background-color-dark);
+        color: var(--text-color-dark);
+    }
+
+    a {
+        color: var(--primary-color-dark);
+    }
+
+    button {
+        background-color: var(--primary-color-dark);
+        color: var(--accent-color-dark);
+    }
+
+    button:hover {
+        background-color: var(--secondary-color-dark);
+        color: var(--primary-color-dark);
+    }
+
+
+}

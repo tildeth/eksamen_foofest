@@ -1,0 +1,47 @@
+/* Home.module.css */
+.homeContainer {
+    padding: 2rem;
+    background-color: var(--background-color-light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .homeContent {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--primary-color-dark);
+      margin-bottom: 2rem;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      color: var(--primary-color-dark);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+  }
+  
+
+  
+  @media (max-width: 768px) {
+    .landingh1 {
+      font-size: 2rem;
+    }
+  
+    .landingp {
+      font-size: 1rem;
+    }
+  }
+
+  
+  /* import React from 'react';
+
+*/

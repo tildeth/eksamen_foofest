@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { addGuest } from "@/lib/supabase";
+import styles from "@/styles/GuestForm.module.css"
 
 const GuestForm = () => {
   const [mainGuest, setMainGuest] = useState({
@@ -88,7 +89,7 @@ const GuestForm = () => {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className={styles.guestform} onSubmit={handleSubmit}>
         <fieldset>
           <legend>Personlige oplysninger</legend>
 
@@ -209,8 +210,8 @@ const GuestForm = () => {
   </div>
         ))}
 
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        <button type="submit">Send</button>
+{error && <p className={styles.error}>{error}</p>}
+<button type="submit">Send</button>
       </form>
     </div>
   );

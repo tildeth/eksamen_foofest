@@ -1,0 +1,127 @@
+/* Ticket Section Layout */
+.ticketSection {
+    padding: 2rem;
+    background-color: var(--background-color-light); 
+    color: var(--text-color-light); 
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 2rem auto;
+  }
+  
+  .heading {
+    text-align: center;
+    color: var(--primary-color-light); 
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+  }
+  
+  .ticketType {
+    margin-bottom: 1.5rem;
+  }
+  
+  .ticketLabel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+  }
+  
+  .counter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .counterButton {
+    background-color: var(--secondary-color-light); 
+    color: var(--text-color-light); 
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+  }
+  
+  .counterButton:hover {
+    background-color: var(--primary-color-light); 
+    transform: scale(1.1);
+  }
+  
+  .ticketCount {
+    font-size: 1.2rem;
+    width: 32px;
+    text-align: center;
+  }
+  
+ 
+  .summary {
+    margin: 1.5rem 0;
+    text-align: center;
+  }
+  
+  .total {
+    font-size: 1.4rem;
+    color: var(--primary-color-light); 
+    margin-bottom: 0.5rem;
+  }
+  
+  .total span {
+    font-weight: bold;
+  }
+  
+  .fee {
+    font-size: 0.9rem;
+    color: var(--text-color-muted); 
+  }
+
+  .nextButton {
+    display: block;
+    width: 100%;
+    background-color: var(--primary-color-light); 
+    color: var(--text-color-light); 
+    border: none;
+    border-radius: 4px;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .nextButton:hover {
+    background-color: var(--secondary-color-light); 
+    transform: scale(1.05);
+  }
+  
+ 
+  @media (max-width: 600px) {
+    .ticketLabel {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .counter {
+      justify-content: space-between;
+      width: 100%;
+    }
+  
+    .ticketSection {
+      padding: 1.5rem;
+    }
+  
+    .heading {
+      font-size: 1.5rem;
+    }
+  
+    .nextButton {
+      font-size: 1rem;
+    }
+  }
+  

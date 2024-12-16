@@ -1,11 +1,19 @@
 import React from 'react';
 import LandingPageTop from '@/components/LandingPageTop';
+import styles from '@/styles/Index.module.css';
 
 const Home = () => {
   return (
-    <>
-      <LandingPageTop />
-    </>
+    <div className={styles.homeContainer}>
+      <div className={styles.homeContent}>
+        <LandingPageTop />
+        <h1 className={styles.landingh1}>Velkommen til FooFest!</h1>
+        <p className={styles.landingp}>
+          Vi glæder os til at byde dig velkommen til festivalen. Tjek vores
+          bands, billetter, og campingmuligheder for at få den bedste oplevelse.
+        </p>
+      </div>
+    </div>
   );
 };
 
