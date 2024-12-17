@@ -9,31 +9,50 @@
   .heading {
     font-size: 1.8rem;
     text-align: center;
-    color: var(--primary-color-light);
+    color: var(--secondary-color-light);
   }
   
   .pladsList {
     list-style: none;
     padding: 0;
     margin: 1rem 0;
+    
   }
   
   .pladsItem label {
     display: flex;
-    justify-content: space-between;
     padding: 0.5rem;
-    background: var(--background-color-dark);
+    background: var(--accent-color-dark);
     border-radius: 4px;
     color: var(--text-color-light);
-  }
+    font-weight: 700;
+    margin: 1rem ;
+    transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .pladsItem label:hover {
+      display: flex;
+      padding: 0.5rem;
+      background: var(--primary-color-dark);
+      border-radius: 4px;
+      color: var(--text-color-light);
+      font-weight: 700;
+      margin: 1rem ;
+      transform: scale(1.05);
+      }
   
   .option {
     margin: 1rem 0;
+    color: var(--text-color-light);
+
   }
   
   .tentSection {
-    display: flex;
-    gap: 1rem;
+    margin: 0 auto; /* Centrerer horisontalt */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: var(--text-color-light);
   }
   
   .tentOption {
@@ -58,17 +77,161 @@
     border-radius: 50%;
     width: 30px;
     height: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+
+  }
+  
+
+  .controlButton:disabled {
+    background: rgb(142, 142, 142);
+    color: var(--text-color-light);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    font-size: 20px;
   }
   
   .totalPrice {
     text-align: center;
     font-weight: bold;
+    font-size: xx-large;
+    color: var(--text-color-light);
+
   }
   
   .submitButton {
     display: block;
-    margin: 1rem auto;
-    background: var(--secondary-color-light);
+    width: 100%;
+    background-color: var(--primary-color-light); 
+    color: var(--text-color-light); 
+    border: none;
+    border-radius: 4px;
     padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+
   }
+
+  .submitButton:hover{
+    background-color: var(--secondary-color-light); 
+    transform: scale(1.05);
+
+  }
+
+  .submitButton:disabled{
+    background-color: var(--muted-color-light); 
+    color: var(--text-color-light);
+    font-weight: 300;
+  }
+
+  .reservationTimer {
+    background-color: var(--background-color-light);
+    border: 2px solid var(--primary-color-light);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .reservationTimer h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color-dark);
+    margin-bottom: 10px;
+  }
+  
+  .reservationTimer p {
+    font-size: 1rem;
+    color: var(--text-color-light);
+  }
+
+
+/* Tablet*/
+@media (max-width: 768px) {
+  .campingSection {
+    padding: 1rem; 
+    margin: 1rem; 
+    border-radius: 6px;
+  }
+
+  .heading {
+    font-size: 1.5rem; 
+  }
+
+  .pladsItem label {
+    flex-direction: column; 
+    padding: 0.75rem; 
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+
+  .tentSection {
+    flex-direction: column; 
+    gap: 0.75rem;
+    
+  }
+
+  .totalPrice {
+    font-size: 1.5rem; 
+  }
+
+  .submitButton {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+}
+
+/* Mobil */
+@media (max-width: 480px) {
+  .campingSection {
+    padding: 0.5rem;
+    margin: 0.5rem;
+  }
+
+  .heading {
+    font-size: 1.3rem;
+  }
+
+  .pladsItem label {
+    padding: 0.5rem;
+    font-size: 0.9rem; 
+  }
+
+  .controlButton {
+    width: 25px;
+    height: 25px;
+    font-size: 1rem;
+  }
+
+  .totalPrice {
+    font-size: 1.2rem;
+  }
+
+  .submitButton {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .reservationTimer {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .reservationTimer h2 {
+    font-size: 1.2rem;
+  }
+
+  .reservationTimer p {
+    font-size: 0.8rem;
+  }
+}
+  
   

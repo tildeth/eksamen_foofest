@@ -2,20 +2,19 @@ import React, { useState } from "react";
 import styles from "@/styles/ScheduleFilter.module.css"
 
 const ScheduleFilter = ({ days, scenes, onFilter }) => {
-  const [selectedDay, setSelectedDay] = useState("");
-  const [selectedScene, setSelectedScene] = useState("");
+  const [selectedDay, setSelectedDay] = useState(""); // Track valgt dag
+  const [selectedScene, setSelectedScene] = useState(""); // Track valgt scene
 
-  const handleDayChange = (e) => {
-    const day = e.target.value;
-    setSelectedDay(day);
-    onFilter(day, selectedScene); // Opdater filtrering
+  const handleDayChange = (day) => {
+    setSelectedDay(day); // Opdater valgt dag
+    onFilter(day, selectedScene); // Kald filtrering med valgt dag og scene
   };
 
-  const handleSceneChange = (e) => {
-    const scene = e.target.value;
-    setSelectedScene(scene);
-    onFilter(selectedDay, scene); // Opdater filtrering
+  const handleSceneChange = (scene) => {
+    setSelectedScene(scene); // Opdater valgt scene
+    onFilter(selectedDay, scene); // Kald filtrering med valgt dag og scene
   };
+
   const getFullDayName = (shortDay) => {
     const dayMap = {
       mon: "MANDAG",
@@ -31,44 +30,51 @@ const ScheduleFilter = ({ days, scenes, onFilter }) => {
 
   return (
     <div className={styles.scheduleFilter}>
-
-      {/* Dag Filter */}
-      <div className={styles.filter}>
-        <label htmlFor="day">Vælg Dag:</label>
-        <select
-         id="day"
-          value={selectedDay ? getFullDayName(selectedDay) : ""}
-          onChange={handleDayChange}
-          className={styles.select}
+    {/* Dag Knapper */}
+    <div className={styles.filterIndhold}>
+      <h3>Vælg Dag:</h3>
+      <div className={styles.buttonGroup}>
+        <button
+          onClick={() => handleDayChange("")}
+          className={`${styles.filterSelect} ${selectedDay === "" ? styles.filterSelectActive : ""}`}
         >
-          <option value="">Alle Dage</option>
-          {days.map((day) => (
-            <option key={day} value={day}>
-              {getFullDayName(day).toUpperCase()}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      {/* Scene Filter */}
-      <div className={styles.filter}>
-        <label htmlFor="scene">Vælg Scene:</label>
-        <select
-          id="scene"
-          value={selectedScene}
-          onChange={handleSceneChange}
-          className={styles.select}
-        >
-          <option value="">Alle Scener</option>
-          {scenes.map((scene) => (
-            <option key={scene} value={scene}>
-              {scene}
-            </option>
-          ))}
-        </select>
+          Alle Dage
+        </button>
+        {days.map((day) => (
+          <button
+            key={day}
+            onClick={() => handleDayChange(day)}
+            className={`${styles.filterSelect} ${selectedDay === day ? styles.filterSelectActive : ""}`}
+          >
+            {getFullDayName(day)}
+          </button>
+        ))}
       </div>
     </div>
-  );
+
+    {/* Scene Knapper */}
+    <div className={styles.filterIndhold}>
+      <h3>Vælg Scene:</h3>
+      <div className={styles.buttonGroup}>
+        <button
+          onClick={() => handleSceneChange("")}
+          className={`${styles.filterSelect} ${selectedScene === "" ? styles.filterSelectActive : ""}`}
+        >
+          ALLE SCENER
+        </button>
+        {scenes.map((scene) => (
+          <button
+            key={scene}
+            onClick={() => handleSceneChange(scene)}
+            className={`${styles.filterSelect} ${selectedScene === scene ? styles.filterSelectActive : ""}`}
+          >
+            {scene}
+          </button>
+        ))}
+      </div>
+    </div>
+  </div>
+);
 };
 
 export default ScheduleFilter;

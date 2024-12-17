@@ -1,29 +1,85 @@
 /* ScheduleFilter.module.css */
 .scheduleFilter {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
+
+  button{
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;  }
 }
 
 .filterSelect {
   padding: 10px;
   font-size: 1rem;
-  border: 1px solid var(--muted-color-light); /* Brug den globale muted farve */
   border-radius: 5px;
   outline: none;
   width: 45%;
   background-color: var(--background-color-light);
   color: var(--text-color-light);
   box-sizing: border-box;
+  
 }
 
-.filterSelect:focus {
-  border-color: var(--primary-color-light); /* Brug den globale primære farve */
+.filterSelectActive {
+  background-color: var(--primary-color-light); 
+  color: white;
 }
 
 .filterLabel {
   font-weight: bold;
   margin-bottom: 5px;
   font-size: 1.1rem;
-  color: var(--text-color-light); /* Brug den globale tekstfarve */
+  color: var(--text-color-light); 
+}
+
+.filterIndhold{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+
+}
+
+/*Tablet*/
+@media (max-width: 768px) {
+  .filterSelect {
+    width: 80%; 
+    font-size: 0.9rem; 
+  }
+
+  .buttonGroup {
+    gap: 8px; 
+  }
+
+  .filterIndhold {
+    margin-bottom: 15px;
+  }
+}
+
+/*Mobil */
+@media (max-width: 480px) {
+  .filterSelect {
+    width: 100%; 
+    font-size: 0.85rem;
+    padding: 8px; 
+  }
+
+  .buttonGroup {
+    flex-direction: column; 
+    gap: 5px; 
+  }
+
+  .filterIndhold h3 {
+    font-size: 1rem; 
+    margin-bottom: 8px;
+  }
 }

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useBooking } from "@/context/BookingContext";
-import { hentLedigePladser, reseverPlads, cancelReservation } from "@/lib/api";
+import { hentLedigePladser, reseverPlads } from "@/lib/api";
 import { useRouter } from "next/router";
 import styles from "@/styles/Camping.module.css";
+import { completeRes } from "@/lib/api";
 
 export default function Camping() {
   const {
@@ -38,22 +39,6 @@ export default function Camping() {
   fetchPladser();
 }, []);
 
-// Timer logik
-useEffect(() => {
-  if (isTimerActive && timer > 0) {
-    const countdown = setInterval(() => {
-      setTimer((prevTimer) => {
-        if (prevTimer === 1) {
-          clearInterval(countdown); // Stop timeren ved 0
-          cancelReservation(resId); // Aflyse reservationen
-        }
-        return prevTimer - 1;
-      });
-    }, 1000);
-    
-    return () => clearInterval(countdown); // Clean up interval
-  }
-}, [isTimerActive, timer, resId, setTimer]);
 
   // Format timer til MM:SS
   const formatTime = (seconds) => {
@@ -101,23 +86,32 @@ useEffect(() => {
 const viderePersonOp = async () => {
   try {
     const antal = billetter.totalTickets;
-    const reservation = await reseverPlads(valgtArea, antal);
-    setArea(valgtArea);
-    setResId(reservation.id);
-    setBilletter({ ...billetter, totalPrice: updatedTotalPrice });
-    setIsTimerActive(true); 
 
+    // Reserver plads og få et reservation ID
+    const reservationId = await reseverPlads(valgtArea, antal);
+
+    // Gem værdier i context
+    setArea(valgtArea);
+    setResId(reservationId);
+    setBilletter({ ...billetter, totalPrice: updatedTotalPrice });
+
+    // Naviger til næste side med de relevante data
     router.push({
       pathname: "/per_oplys",
       query: {
         numTickets: antal,
-        timer: timer, 
+        resId: reservationId, // Send reservation ID som query-parameter
+        greenCamping: greenCamping, // Send valgte camping muligheder videre
+        twoPersonTents,
+        threePersonTents,
       },
     });
   } catch (error) {
     console.error("Fejl ved reservation:", error);
+    alert("Der opstod en fejl under reservationen. Prøv igen.");
   }
 };
+
   const handleTwoPersonTentChange = (e) => {
     // Beregn det samlede antal personer baseret på telte
     const value = Math.min(
@@ -156,12 +150,6 @@ const viderePersonOp = async () => {
 
   return (
     <section className={styles.campingSection}>
-     {isTimerActive && (
-        <div>
-          <h2>Din reservation er undervejs!</h2>
-          <p>Du har {formatTime(timer)} til at bekræfte din reservation.</p>
-        </div>
-      )}
      <h1 className={styles.heading}>Vælg campingplads</h1>
       <ul className={styles.pladsList}>
         {pladser.map((plads) => (

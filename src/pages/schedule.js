@@ -103,7 +103,7 @@ const Schedule = ({ schedule, bands, error }) => {
             <h3>{scene}</h3>
             {Object.entries(days).map(([day, slots]) => (
               <div key={day} className={styles.daySchedule}>
-                <h4>{selectedDay ? getFullDayName(selectedDay):toUpperCase()}</h4>
+                <h4>{selectedDay ? getFullDayName(selectedDay): ""}</h4>
                 <ul>
                   {slots.map((slot, index) => {
                     const { act, start, end } = slot;

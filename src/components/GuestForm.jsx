@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { addGuest } from "@/lib/supabase";
 import styles from "@/styles/GuestForm.module.css"
 
-const GuestForm = () => {
+const GuestForm = ({onConfirm}) => {
   const [mainGuest, setMainGuest] = useState({
     fornavn: "",
     efternavn: "",
@@ -82,7 +82,13 @@ const GuestForm = () => {
       }
   
       // Redirect til bekræftelsesside
-      router.push("/confirmation");
+     router.push({
+      pathname: "/confirmation",
+      query: {
+        mainGuest: JSON.stringify(mainGuest),
+        guests: JSON.stringify(guests),
+      }
+    });
     } catch (err) {
       setError("Der opstod en fejl under indsendelsen. Prøv igen.");
     }
@@ -211,7 +217,7 @@ const GuestForm = () => {
         ))}
 
 {error && <p className={styles.error}>{error}</p>}
-<button type="submit">Send</button>
+<button onClick={onConfirm} type="submit">Send</button>
       </form>
     </div>
   );

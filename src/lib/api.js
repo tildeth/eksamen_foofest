@@ -36,7 +36,7 @@ export const reseverPlads = async (area, amount) => {
       throw new Error("Fejl ved reservation af plads");
     }
     const data = await response.json();
-    return data; // Returnerer reservationens ID
+    return data.id; // Returnerer reservationens ID
   } catch (error) {
     console.error(error);
     throw error;
@@ -64,25 +64,7 @@ export const completeRes = async (resId) => {
   }
 };
 
-// Aflys reservation
-export const cancelReservation = async (id) => {
-  try {
-    const response = await fetch(`${baseUrl}/api/cancel-reservation`, {
-      method: "POST",
-      headers,
-      body: JSON.stringify({ id }),
-    });
 
-    if (!response.ok) {
-      throw new Error("Fejl ved at aflyse reservation");
-    } else {
-      console.log("Reservation succesfuldt aflyst");
-    }
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-};
 
 //********DEL 2*******
 

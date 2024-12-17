@@ -14,18 +14,13 @@ const NavMenu = () => {
 
       <ul className={styles.navLinks}>
         <li>
-          <Link href="/bands">
-            Bands
-          </Link>
-        </li>
-        <li>
           <Link href="/schedule">
-            Schedule
+            Program
           </Link>
         </li>
         <li>
           <Link href="/billet">
-            Buy Tickets
+            Køb billet
           </Link>
         </li>
       </ul>

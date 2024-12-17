@@ -6,7 +6,7 @@
     padding: 10px 20px;
 
     
-  .logo {
+  .logo a {
     font-family: "ocr-a-std", monospace;
     font-size: 24px;
     font-weight: 300;
@@ -20,15 +20,17 @@
     gap: 20px;
   }
   
-  .navLinks li {
+  .navLinks li a {
     font-family: "museo-sans", sans-serif;
     font-weight: 300;
     font-size: 18px;
-    color: var(--text-color-light);
+    color: white;
     text-decoration: none;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
   }
   
-  .navLinks li:hover {
+  .navLinks li a:hover {
     color: var(--primary-color-light);
   }
   
