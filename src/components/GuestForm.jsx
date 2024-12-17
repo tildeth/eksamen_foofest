@@ -84,10 +84,10 @@ const GuestForm = ({onConfirm}) => {
       // Redirect til bekræftelsesside
      router.push({
       pathname: "/confirmation",
-      query: {
-        mainGuest: JSON.stringify(mainGuest),
-        guests: JSON.stringify(guests),
-      }
+  query: {
+    mainGuest: JSON.stringify(mainGuest),
+    guests: JSON.stringify(guests),
+  },
     });
     } catch (err) {
       setError("Der opstod en fejl under indsendelsen. Prøv igen.");

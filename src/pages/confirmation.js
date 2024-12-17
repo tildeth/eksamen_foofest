@@ -6,9 +6,14 @@ const Confirmation = () => {
   const router = useRouter();
   const { mainGuest, guests } = router.query;
 
+  // Håndter hvis dataene ikke er tilgængelige endnu
+  if (!mainGuest || !guests) {
+    return <p>Indlæser...</p>;
+  }
+
   // Parse query parametre til objekt
-  const mainGuestData = mainGuest ? JSON.parse(mainGuest) : null;
-  const guestsData = guests ? JSON.parse(guests) : [];
+  const mainGuestData = JSON.parse(mainGuest);
+  const guestsData = JSON.parse(guests);
 
   return (
     <div className={styles.confirmContainer}>

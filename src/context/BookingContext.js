@@ -11,6 +11,9 @@ export function BookingProvider({ children }) {
 
     const totalTickets = billetter.regular + billetter.vip;
 
+    const [mainGuest, setMainGuest] = useState(null);
+    const [guests, setGuests] = useState([]);
+
     // Tilføj timer og isTimerActive
     const [timer, setTimer] = useState(300); // Timer starter ved 300 sekunder (5 minutter)
     const [isTimerActive, setIsTimerActive] = useState(false); // Timerens status (aktiv/inaktiv)
@@ -47,7 +50,11 @@ export function BookingProvider({ children }) {
                 startTimer,  // Funktion til at starte timeren
                 stopTimer,   // Funktion til at stoppe timeren
                 resetTimer,   // Funktion til at nulstille timeren
-                totalTickets
+                totalTickets,
+                mainGuest,
+                setMainGuest,
+                guests,
+                setGuests
             }}>
             {children}
         </BookingContext.Provider>

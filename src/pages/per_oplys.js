@@ -13,7 +13,7 @@ const personlige_oplysninger = () => {
         setTimer,
         isTimerActive,
         setIsTimerActive,
-        resId,
+        resId,setMainGuest, setGuests, mainGuest, guests
       } = useBooking();
       const router = useRouter();
     
@@ -55,6 +55,9 @@ const personlige_oplysninger = () => {
 
       // Fuldfør reservationen ved bekræftelse
       await completeRes(resId);
+
+      setMainGuest(mainGuest); // Opdater hovedgæsten
+     setGuests(guests); // Opdater ekstra gæster
 
       // Stop timeren og redirect til confirmation
       setIsTimerActive(false);  // Stop timeren når brugeren bekræfter
