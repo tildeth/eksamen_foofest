@@ -1,13 +1,19 @@
 import React from "react";
 import { useBooking } from "@/context/BookingContext";
+import { FaShoppingCart } from "react-icons/fa"; 
+import styles from '@/styles/Cart.module.css'; 
 
 const Cart = () => {
-  const { billetter } = useBooking();
-  const totalTickets = billetter.totalTickets;
+  const { totalTickets } = useBooking();
 
   return (
-    <div>
-          {totalTickets} <p>kurv</p>
+    <div className={styles.cartContainer}>
+      <FaShoppingCart className={styles.cartIcon} />
+      {totalTickets > 0 && (
+        <div className={styles.ticketCount}>
+          {totalTickets}
+        </div>
+      )}
     </div>
   );
 };

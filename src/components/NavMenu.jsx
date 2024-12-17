@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import styles from "@/styles/NavMenu.module.css";
+import Cart from "./Cart";
 
 const NavMenu = () => {
   return (
@@ -23,6 +24,7 @@ const NavMenu = () => {
             Køb billet
           </Link>
         </li>
+        <li><Cart /></li>
       </ul>
     </nav>
   );

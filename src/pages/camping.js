@@ -3,7 +3,7 @@ import { useBooking } from "@/context/BookingContext";
 import { hentLedigePladser, reseverPlads } from "@/lib/api";
 import { useRouter } from "next/router";
 import styles from "@/styles/Camping.module.css";
-import { completeRes } from "@/lib/api";
+import BackButton from "@/components/BackButton";
 
 export default function Camping() {
   const {
@@ -150,7 +150,9 @@ const viderePersonOp = async () => {
 
   return (
     <section className={styles.campingSection}>
+      <BackButton />
      <h1 className={styles.heading}>Vælg campingplads</h1>
+     
       <ul className={styles.pladsList}>
         {pladser.map((plads) => (
           <li key={plads.area} className={styles.pladsItem}>

@@ -4,6 +4,7 @@ import { useBooking } from "@/context/BookingContext";
 import { useRouter } from "next/router";
 import styles from "@/styles/Per_oplys.module.css"
 import { completeRes } from "@/lib/api";
+import BackButton from "@/components/BackButton";
 
 
 const personlige_oplysninger = () => {
@@ -72,12 +73,14 @@ const personlige_oplysninger = () => {
 
     return (  
         <>
+        <BackButton />
         <h1 className={styles.peroplysh1}>Indtast dine oplysninger</h1>
+        
         <div className={styles.reservationTimer}>
         <h2>Din reservation er undervejs!</h2>
             <p>Du har {formatTime(timer)} til at bekræfte din reservation.</p>
             </div>
-            <p>Reservation ID: {resId}</p>
+            <p className={styles.resIdStyle}>Reservation ID: {resId}</p>
         <Form onConfirm={handleConfirm}/>
         
 

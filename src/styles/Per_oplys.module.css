@@ -24,6 +24,11 @@
     color: var(--secondary-color-light);
     text-align: center;
   }
+
+  .resIdStyle{
+    text-align: center;
+    color: var(--secondary-color-light);
+  }
   
 
   

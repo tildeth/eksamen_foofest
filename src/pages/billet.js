@@ -2,6 +2,7 @@ import { useBooking } from "@/context/BookingContext";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import styles from "@/styles/Billet.module.css";
+import BackButton from "@/components/BackButton";
 
 export default function Billet(){
     const {billetter, setBilletter} = useBooking();
@@ -38,7 +39,9 @@ export default function Billet(){
 
     return (
         <section className={styles.ticketSection}>
+          <BackButton />
           <h1 className={styles.heading}>Vælg billetter</h1>
+          
           <div className={styles.ticketType}>
             <label className={styles.ticketLabel}>
               Standard (799,-)
