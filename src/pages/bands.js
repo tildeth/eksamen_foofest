@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import BandItem from "@/components/BandItem";
 import { fetchBands } from "@/lib/api";
-import styles from "@/styles/Bands.module.css";
 
 const BandsPage = () => {
   const [bands, setBands] = useState([]);

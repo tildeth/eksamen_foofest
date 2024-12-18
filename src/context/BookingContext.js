@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 
 
-//Der har været sammenarbejde/hjælp med ChatGPT i denne del
+//Der har været sammenarbejde/hjælp med ChatGPT i denne del 
 // Opret context
 const BookingContext = createContext();
 
