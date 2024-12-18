@@ -1,0 +1,45 @@
+
+.bandsPage {
+    padding: 2rem 1rem;
+    background-color: var(--background-color-light); 
+    color: var(--text-color-light); 
+    font-family: 'Montserrat', sans-serif; 
+  
+  .title {
+    font-size: 2rem;
+    color: var(--primary-color-light); 
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .loading,
+  .error {
+    text-align: center;
+    font-size: 1.25rem;
+    color: var(--accent-color-light); 
+    margin-top: 2rem;
+  }
+  
+  .bandsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 1.5rem;
+    padding: 1rem 0;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .bandsPage {
+      background-color: var(--background-color-dark); 
+      color: var(--text-color-dark);
+  
+    .title {
+      color: var(--primary-color-dark); 
+    }
+  
+    .loading,
+    .error {
+      color: var(--accent-color-dark); 
+    }
+  }
+}
+}
