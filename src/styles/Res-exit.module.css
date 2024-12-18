@@ -1,7 +1,14 @@
 .resExit{
     text-align: center;
+    color: var(--secondary-color-light);
+    text-align: center;
+    margin: 2% auto;
+    width: fit-content;
+    padding: 3%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
 }
 
-.resExit p{
+.resExit h1{
     color: var(--secondary-color-light);
 }

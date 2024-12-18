@@ -4,6 +4,8 @@
 .scheduleSection h2{
     text-align: center;
     font-size: xxx-large;
+    color: var(--secondary-color-light);
+
   }
 
 
@@ -18,12 +20,13 @@
   
   .scheduleSection h3 {
     font-size: 1.5rem;
-    color: var(--primary-color-light);
+    color: var(--secondary-color-light);
+    font-weight: 500;
   }
   
   .scheduleSection h4 {
     font-size: 1.25rem;
-    color: var(--primary-color-light);
+    color: var(--secondary-color-light);
   }
   
   .scheduleSection ul {
@@ -38,14 +41,18 @@
   .slot {
     display: grid;
     grid-template-rows: auto 1fr auto; 
-    background: linear-gradient(145deg, var(--primary-color-dark), var(--secondary-color-dark));
+    background-color: var(--background-color-light);
     padding: 1rem;
     border-radius: 8px;
-    
+    transition: transform 0.2s;
     height: 100%; 
     justify-items: baseline; 
     margin-bottom: 20px;
   
+  }
+
+  .slot:hover{
+    transform: scale(1.1);
   }
    
   .slot p {
@@ -60,7 +67,7 @@
       display: block;
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
-      color: var(--accent-color-light);
+      color: var(--secondary-color-light);
     }
 
     .genre_band{

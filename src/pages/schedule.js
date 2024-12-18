@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useScroll, motion } from "framer-motion";
 import BandItem from "@/components/BandItem";
 import ScheduleFilter from "@/components/ScheduleFilter";
 import styles from "@/styles/Schedule.module.css";
+
 
 // Importer dine API funktioner
 import { fetchSchedule, fetchBands } from "@/lib/api";
@@ -44,6 +46,7 @@ export async function getServerSideProps() {
 const Schedule = ({ schedule, bands, error }) => {
   const [selectedDay, setSelectedDay] = useState(""); // Standard: Alle dage
   const [selectedScene, setSelectedScene] = useState(""); // Standard: Alle scener
+  const {scrollYProgress} = useScroll();
 
   if (!schedule || !bands) return <div>Fejl ved hentning af data: {error}</div>; // Fejl håndtering
 
@@ -93,8 +96,20 @@ const Schedule = ({ schedule, bands, error }) => {
           setSelectedScene(scene);
         }}
       />
-
       
+  <motion.div
+        style={{
+          position: "fixed", 
+          top: "0", 
+          left: "0",
+          width: "100%", 
+          height: "10px", 
+          background: "hotpink", 
+          transformOrigin: "0%", 
+          scaleX: scrollYProgress, 
+          zIndex: 9999, 
+        }}
+      />
 
       {/* Filtreret schedule */}
       {Object.keys(filteredSchedule).length > 0 ? (

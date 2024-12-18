@@ -1,23 +1,27 @@
 /* Home.module.css */
 .homeContainer {
-    padding: 2rem;
-    background-color: var(--background-color-light);
+ 
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: auto 0;
   }
   
   .homeContent {
-    max-width: 1200px;
+    max-width: 800px;
     width: 100%;
     text-align: center;
-    margin: 0 auto;
+    margin: auto 0;
+    padding: 1%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    
   }
   .homeContent h1 {
       font-size: 2.5rem;
-      color: var(--primary-color-dark);
+      color: var(--secondary-color-dark);
       margin-bottom: 2rem;
     }
     
@@ -27,6 +31,8 @@
       line-height: 1.6;
       margin-bottom: 2rem;
     }
+
+   
   
   
 
