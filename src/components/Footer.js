@@ -62,7 +62,7 @@ const Footer = () => (
       <h4>Sponsorer</h4>
       <div className={styles.sponsors}>
         <Image
-          src="/img/sponsor1"
+          src="/sponsor1"
           alt="Sponsor 1"
           width={150}
           height={150}
