@@ -1,7 +1,7 @@
 import NavMenu from "@/components/NavMenu";
+import Footer from "@/components/Footer";
 import styles from "@/styles/Layout.module.css"; 
 import '@/styles/globals.css';
-import Footer from "@/components/Footer";
 
 
 const Layout = ({ children }) => {
