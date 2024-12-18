@@ -16,17 +16,17 @@
     margin-top: 2rem;
   }
   
-  h3 {
+  .scheduleSection h3 {
     font-size: 1.5rem;
     color: var(--primary-color-light);
   }
   
-  h4 {
+  .scheduleSection h4 {
     font-size: 1.25rem;
     color: var(--primary-color-light);
   }
   
-  ul {
+  .scheduleSection ul {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(275px, 1fr)); /* Grid med automatisk justering */
     gap: 3rem;
@@ -72,15 +72,15 @@
 @media (max-width: 768px) {
   .scheduleHeader {
     font-size: 1.5rem;
-
+  }
     
-  h3 {
+    .scheduleHeader h3 {
     font-size: 1.25rem;
   }
 
-  h4 {
+  .scheduleHeader h4 {
     font-size: 1rem;
   }
-  }
+  
 
 }
