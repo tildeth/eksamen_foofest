@@ -96,7 +96,7 @@ const GuestForm = ({onConfirm}) => {
   return (
     <div>
       <form className={styles.guestform} onSubmit={handleSubmit}>
-        <fieldset>
+        <fieldset className={styles.fieldset}>
           <legend>Personlige oplysninger</legend>
 
           <label htmlFor="fornavn">Fornavn:</label>
@@ -154,7 +154,7 @@ const GuestForm = ({onConfirm}) => {
             placeholder="Indtast dit telefonnummer"
           />
 
-          <fieldset>
+          <fieldset className={styles.fieldset}>
             <legend>Betalingsmetode</legend>
             <label>
               <input

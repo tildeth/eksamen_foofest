@@ -5,28 +5,23 @@
     background-color: var(--background-color-light); 
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-    fieldset {
-      border: none;
-      margin-bottom: 20px;
-    }
-    
-    legend {
+}
+.guestform legend {
       font-size: 1.25rem;
       margin-bottom: 10px;
       font-weight: bold;
       color: var(--primary-color-light); 
     }
     
-    label {
+    .guestform label {
       display: block;
       margin-bottom: 8px;
       font-size: 1rem;
       color: var(--text-color-light); 
     }
     
-    input[type="text"],
-    input[type="email"] {
+    .guestform input[type="text"],
+    .guestform input[type="email"] {
       width: 100%;
       padding: 8px;
       font-size: 1rem;
@@ -35,11 +30,11 @@
       border: 1px solid var(--muted-color-light); 
     }
     
-    input[type="radio"] {
+    .guestform input[type="radio"] {
       margin-right: 10px;
     }
     
-    button {
+    .guestform button {
       display: block;
       width: 100%;
       background-color: var(--primary-color-light); 
@@ -55,21 +50,23 @@
   
     }
   
-    button:hover{
+    .guestform button:hover{
       background-color: var(--secondary-color-light); 
       color: var(--primary-color-light);
       transform: scale(1.05);
   
     }
   
-    button:disabled{
+    .guestform button:disabled{
       background-color: var(--muted-color-light); 
       color: var(--text-color-light);
       font-weight: 300;
     }
-  }
   
- 
+  .fieldset {
+    border: none;
+    margin-bottom: 20px;
+  }
   
   .error {
     color: red;

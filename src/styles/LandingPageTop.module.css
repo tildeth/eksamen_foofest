@@ -3,8 +3,8 @@
     padding: 50px 20px;
     background-color: var(--background-color-light); 
     color: var(--text-color-light); 
-
-    h1 {
+}
+.sectionlandingcomp h1 {
       font-size: 2.5rem;
       margin-bottom: 20px;
       color: var(--primary-color-light); 
@@ -30,6 +30,6 @@
       outline: 2px solid var(--secondary-color-dark); 
       outline-offset: 2px;
     }
-  }
+  
   
  

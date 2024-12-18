@@ -9,14 +9,14 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-
-    h3 {
+}
+.bandItem h3 {
       font-size: 1.5rem;
       color: var(--primary-color-light); 
       margin: 10px 0;
     }
     
-    p {
+    .bandItem p {
       font-size: 1rem;
       color: var(--text-color-light); 
       margin: 5px 0;
@@ -29,7 +29,7 @@
       object-fit: cover;
       margin-bottom: 10px;
     }
-  }
+  
   
   
   

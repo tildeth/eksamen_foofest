@@ -14,20 +14,20 @@
     width: 100%;
     text-align: center;
     margin: 0 auto;
-
-    h1 {
+  }
+  .homeContent h1 {
       font-size: 2.5rem;
       color: var(--primary-color-dark);
       margin-bottom: 2rem;
     }
     
-    p {
+    .homeContent p {
       font-size: 1.1rem;
       color: var(--primary-color-dark);
       line-height: 1.6;
       margin-bottom: 2rem;
     }
-  }
+  
   
 
   
