@@ -5,7 +5,7 @@ const headers = {
   Accept: "application/json",
 };
 
-// Hent ledige pladser
+// Hent ledige pladser    
 export const hentLedigePladser = async () => {
   try {
     const response = await fetch(`${baseUrl}/available-spots`);
