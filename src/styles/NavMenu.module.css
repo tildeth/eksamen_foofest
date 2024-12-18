@@ -65,5 +65,22 @@
       }
     }
   
-   
   }
+
+/*Tablet og Mobil*/
+@media (max-width: 768px) {
+  .nav {
+      flex-direction: column;
+  }
+
+  .navLinks {
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      padding-inline-start: 0px;
+  }
+
+  .navLinks li a {
+      font-size: 16px;
+  }
+}

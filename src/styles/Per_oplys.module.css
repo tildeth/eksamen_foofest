@@ -3,10 +3,17 @@
     border: 2px solid var(--primary-color-light);
     border-radius: 8px;
     padding: 20px;
-    margin: 10px 0;
+    margin: 10px auto; /* Center elementet horisontalt */
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrerer indholdet horisontalt */
+    justify-content: center; /* Centrerer indholdet vertikalt */
+    flex-wrap: wrap;
+    height: 100%;
   }
   
   .reservationTimer h2 {

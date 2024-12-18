@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import styles from "@/styles/Res-exit.module.css"
 
+//Lavet i sammenarbejde med ChatGPT
 const ReservationExpired = () => {
   const router = useRouter();
 
@@ -13,7 +15,7 @@ const ReservationExpired = () => {
   }, [router]);
 
   return (
-    <div style={{ textAlign: 'center', padding: '50px' }}>
+    <div className={styles.resExit}>
       <h1>Din reservation er annulleret</h1>
       <p>Reservationen er udløbet. Prøv venligst at lave en ny reservation.</p>
       <p>Du bliver omdirigeret om 5 sekunder...</p>

@@ -1,0 +1,7 @@
+.resExit{
+    text-align: center;
+}
+
+.resExit p{
+    color: var(--secondary-color-light);
+}

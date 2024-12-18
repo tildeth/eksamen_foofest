@@ -123,7 +123,7 @@ const Schedule = ({ schedule, bands, error }) => {
                         <div className={styles.slot}>
                           <strong className={styles.slot_strong}>{act}</strong>
                           <p>{`${start} - ${end}`}</p>
-                          <p>{band.genre}</p>
+                          <p className={styles.genre_band}>{band.genre}</p>
                           <BandItem band={band} />
                         </div>
                       </li>

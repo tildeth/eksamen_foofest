@@ -52,6 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 
     button {
             padding: 10px 15px;
+            font-family: "museo-sans", sans-serif;
             font-size: 1rem;
             background-color: var(--background-color-light);
             color: var(--text-color-light);
@@ -62,6 +63,7 @@ h1, h2, h3, h4, h5, h6 {
           
           button.active {
             background-color: var(--primary-color-light); 
+            font-family: "museo-sans", sans-serif;
             color: white; 
             border: 1px solid var(--primary-color-light);
             transition: background-color 0.3s, transform 0.2s;

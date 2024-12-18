@@ -1,5 +1,5 @@
 .scheduleSection {
-  padding: 2rem;
+  padding: 1rem;
 }
 .scheduleSection h2{
     text-align: center;
@@ -28,7 +28,7 @@
   
   .scheduleSection ul {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr)); /* Grid med automatisk justering */
+    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr)); 
     gap: 3rem;
     list-style-type: none;
     padding: 0;
@@ -37,41 +37,54 @@
 
   .slot {
     display: grid;
-    grid-template-rows: auto 1fr auto; /* Auto-højde til overskrifter og indhold, fleksibel plads til andet indhold */
-    background-color: var(--background-color-light);
+    grid-template-rows: auto 1fr auto; 
+    background: linear-gradient(145deg, var(--primary-color-dark), var(--secondary-color-dark));
     padding: 1rem;
     border-radius: 8px;
     
     height: 100%; 
-    justify-items: stretch; /* Sørger for, at indholdet flugter korrekt */
+    justify-items: baseline; 
     margin-bottom: 20px;
+  
   }
    
   .slot p {
-      margin: 0;
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: var(--text-color-light);
+      font-weight: 700;
     }
   
   
 
     .slot_strong {
       display: block;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       margin-bottom: 0.5rem;
-      color: var(--text-color-light);
+      color: var(--accent-color-light);
+    }
+
+    .genre_band{
+      background-color: var(--accent-color-light);
+      padding: 8px;
+      border-radius: 25px;
+      color: var(--text-color-dark);
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      width: fit-content;
     }
   
-
-
-
-
 
 
 
 @media (max-width: 768px) {
   .scheduleHeader {
     font-size: 1.5rem;
+  }
+
+  .scheduleSection h2{
+    font-size: 2rem;
   }
     
     .scheduleHeader h3 {

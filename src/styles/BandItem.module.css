@@ -1,7 +1,6 @@
-/* BandItem.module.css */
 .bandItem {
-    background-color: var(--background-color-light);
     border-radius: 8px;
+    border: 1px solid var(--accent-color-light);
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -10,17 +9,7 @@
     align-items: center;
     text-align: center;
 }
-.bandItem h3 {
-      font-size: 1.5rem;
-      color: var(--primary-color-light); 
-      margin: 10px 0;
-    }
-    
-    .bandItem p {
-      font-size: 1rem;
-      color: var(--text-color-light); 
-      margin: 5px 0;
-    }
+
     
     .bandimage {
       width: 100%;

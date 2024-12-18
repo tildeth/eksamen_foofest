@@ -8,6 +8,7 @@
 }
 .scheduleFilter button{
     text-transform: uppercase;
+    font-family: "museo-sans", sans-serif;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;  
   }

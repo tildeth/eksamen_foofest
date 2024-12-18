@@ -23,7 +23,7 @@
     
     .homeContent p {
       font-size: 1.1rem;
-      color: var(--primary-color-dark);
+      color: var(--secondary-color-dark);
       line-height: 1.6;
       margin-bottom: 2rem;
     }
@@ -32,16 +32,8 @@
 
   
   @media (max-width: 768px) {
-    .landingh1 {
+    .homeContent h1 {
       font-size: 2rem;
     }
-  
-    .landingp {
-      font-size: 1rem;
-    }
+
   }
-
-  
-  /* import React from 'react';
-
-*/

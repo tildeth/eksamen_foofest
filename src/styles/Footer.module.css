@@ -9,6 +9,10 @@
     gap: 1rem;
 }
 
+.footer h4{
+    text-align: center;
+}
+
 .section {
     flex: 1; 
     min-width: 200px; 
@@ -18,6 +22,7 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    text-align: center;
 }
 
 .list li {
@@ -38,27 +43,27 @@
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
+    justify-content: center;
 }
 
 .icon {
-    font-size: 1.5rem; 
-    color: var(--primary-color-dark);
+    font-size: 2.5rem; 
+    color: var(--text-color-dark);
     transition: color 0.3s;
 }
 
 .icon:hover {
-    color: var(--accent-color-dark);
+    color: var(--primary-color-dark);
 }
 
 .sponsors {
-    display: flex;
-    gap: 1rem; 
+    display: flex; 
     margin-top: 1rem;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .sponsorImg {
-    width: 80px; 
+    width: 75%; 
     height: auto;
     object-fit: contain;
     filter: brightness(0.9); 
@@ -66,6 +71,52 @@
 }
 
 .sponsorImg:hover {
-    filter: brightness(1.2); 
+    filter: brightness(1.5); 
+}
+
+/*Tablet*/
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .section {
+        min-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .socialIcons {
+        gap: 1rem;
+    }
+
+    .icon {
+        font-size: 2rem;
+    }
+
+    .sponsors {
+        margin-top: 1.5rem;
+    }
+
+    .sponsorImg {
+        width: 30%;
+    }
+}
+
+/* Mobil*/
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 0.5rem;
+    }
+
+    .list {
+        font-size: 0.9rem;
+    }
+
+    .sponsorImg {
+        width: 90%;
+    }
 }
     
