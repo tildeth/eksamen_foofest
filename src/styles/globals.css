@@ -63,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
           
           button.active {
             background-color: var(--primary-color-light); 
-            font-family: "museo-sans", sans-serif;
+            
             color: white; 
             border: 1px solid var(--primary-color-light);
             transition: background-color 0.3s, transform 0.2s;
