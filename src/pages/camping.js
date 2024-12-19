@@ -13,10 +13,6 @@ export default function Camping() {
     setBilletter,
     resId,
     setResId,
-    timer,
-    setTimer,
-    isTimerActive,
-    setIsTimerActive,
   } = useBooking();
   const [pladser, setPladser] = useState([]);
   const [valgtArea, setValgtArea] = useState(null);
@@ -39,13 +35,6 @@ export default function Camping() {
   fetchPladser();
 }, []);
 
-
-  // Format timer til MM:SS
-  const formatTime = (seconds) => {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = seconds % 60;
-    return `${String(minutes).padStart(2, "0")}:${String(remainingSeconds).padStart(2, "0")}`;
-  };
 
   const { totalPrice, totalTickets } = billetter;
 
@@ -112,14 +101,14 @@ const viderePersonOp = async () => {
   }
 };
 
-  const handleTwoPersonTentChange = (e) => {
-    // Beregn det samlede antal personer baseret på telte
-    const value = Math.min(
-      Number(e.target.value),
-      Math.floor((totalTickets - threePersonTents * 3) / 2)
-    );
-    setTwoPersonTents(value);
-  };
+ const handleTwoPersonTentChange = (e) => {
+  const value = Math.min(
+    Number(e.target.value),
+    Math.floor((totalTickets - threePersonTents *3) /2)
+  );
+ setTwoPersonTents(value)
+}
+
 
   const handleThreePersonTentChange = (e) => {
     // Beregn det samlede antal personer baseret på telte
