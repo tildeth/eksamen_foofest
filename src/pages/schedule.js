@@ -3,6 +3,7 @@ import { useScroll, motion } from "framer-motion";
 import BandItem from "@/components/BandItem";
 import ScheduleFilter from "@/components/ScheduleFilter";
 import styles from "@/styles/Schedule.module.css";
+import Head from "next/head";
 
 
 // Importer dine API funktioner
@@ -82,7 +83,12 @@ const Schedule = ({ schedule, bands, error }) => {
   };
 
   return (
+    <>
+    <Head>
+        <title>FooFest Program - {selectedDay ? getFullDayName(selectedDay) : "Alle Dage"}</title>
+      </Head>
     <section className={styles.scheduleSection}>
+
       <h2 className={styles.scheduleHeader}>
         FooFest Program {selectedDay ? getFullDayName(selectedDay) : "Alle Dage"}
       </h2>
@@ -153,17 +159,9 @@ const Schedule = ({ schedule, bands, error }) => {
         <p>Ingen resultater fundet for de valgte filtre.</p>
       )}
     </section>
+    </>
   );
 };
 
 export default Schedule;
 
-
-export async function getServerSideProps() {
-  return {
-      props: {
-          title: "Program", 
-          description: "Se alle bands der spiller på FooFest 2025!"
-      }
-  };
-}
