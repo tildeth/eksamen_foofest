@@ -217,7 +217,7 @@ const GuestForm = ({onConfirm}) => {
         ))}
 
 {error && <p className={styles.error}>{error}</p>}
-<button onClick={onConfirm} type="submit">Send</button>
+<button type="submit">Send</button>
       </form>
     </div>
   );

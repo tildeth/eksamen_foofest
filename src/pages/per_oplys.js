@@ -8,13 +8,17 @@ import BackButton from "@/components/BackButton";
 
 
 const personlige_oplysninger = () => {
-    const {
-        timer,
-        setTimer,
-        isTimerActive,
-        setIsTimerActive,
-        resId,setMainGuest, setGuests, mainGuest, guests
-      } = useBooking();
+      const {
+    timer,
+    setTimer,
+    isTimerActive,
+    setIsTimerActive,
+    resId,
+    setMainGuest,
+    setGuests,
+    mainGuest,
+    guests,
+  } = useBooking();
       const router = useRouter();
     
        // Start timeren automatisk når siden loader
@@ -24,7 +28,7 @@ const personlige_oplysninger = () => {
 
     if (!isTimerActive) {
       setIsTimerActive(true); // Sæt isTimerActive til true for at starte timeren
-      setTimer(50); // Start timeren med 60 sekunder
+      setTimer(60); // Start timeren med 60 sekunder
       console.log("Timeren starter nu!");
     }
 
