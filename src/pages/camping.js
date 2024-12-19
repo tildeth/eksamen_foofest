@@ -171,7 +171,7 @@ const viderePersonOp = async () => {
         ))}
       </ul>
       <div className={styles.option}>
-        <label>
+        <label aria-label="Green camping valg">
           <input
             type="checkbox"
             checked={greenCamping}
@@ -184,7 +184,8 @@ const viderePersonOp = async () => {
         <div className={styles.tentOption}>
           <label>Antal 2-personers telte:</label>
           <div className={styles.tentControls}>
-            <button
+            <button 
+            aria-label="minusknap 2 persontelte"
               type="button"
               onClick={decreaseTwoPersonTents}
               disabled={twoPersonTents <= 0}
@@ -202,6 +203,7 @@ const viderePersonOp = async () => {
               className={styles.tentInput}
             />
             <button
+              aria-label="plusknap 2 persontelte"
               type="button"
               onClick={increaseTwoPersonTents}
               disabled={twoPersonTents >= maxTwoPersonTents}
@@ -217,6 +219,7 @@ const viderePersonOp = async () => {
           <div className={styles.tentControls}>
             <button
               type="button"
+              aria-label="minusknap 3 persontelte"
               onClick={decreaseThreePersonTents}
               disabled={threePersonTents <= 0}
               className={styles.controlButton}
@@ -234,6 +237,7 @@ const viderePersonOp = async () => {
             />
             <button
               type="button"
+              aria-label="plusknap 3 persontelte"
               onClick={increaseThreePersonTents}
               disabled={threePersonTents >= maxThreePersonTents}
               className={styles.controlButton}
@@ -249,10 +253,20 @@ const viderePersonOp = async () => {
       </p>
       <button
         className={styles.submitButton}
+        aria-label="forsæt knap"
         disabled={!valgtArea} onClick={viderePersonOp}
       >
         Fortsæt
       </button>
     </section>
   );
+}
+
+export async function getServerSideProps() {
+  return {
+      props: {
+          title: "Vælg campingplads", 
+          description: "Vælg din campingplads her, og find ekstra tilkøb til din oplevelse!"
+      }
+  };
 }

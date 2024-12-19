@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "@/styles/BandImage.module.css"
+import styles from "@/styles/BandImage.module.css";
 
 const BandImage = ({ logo, logoCredits, bandName }) => {
   const logoUrl = logo
@@ -11,7 +11,11 @@ const BandImage = ({ logo, logoCredits, bandName }) => {
   return (
     <div className={styles.bandImage}>
       {logoUrl ? (
-        <img className={styles.bandyImage} src={logoUrl} alt={`${bandName} logo`} />
+        <img
+          className={styles.bandyImage}
+          src={logoUrl}
+          alt={`${bandName} logo`}
+        />
       ) : (
         <p>No logo available</p> // Alternativ tekst
       )}

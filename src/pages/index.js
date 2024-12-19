@@ -18,3 +18,12 @@ const Home = () => {
 };
 
 export default Home;
+
+export async function getServerSideProps() {
+  return {
+      props: {
+          title: "Forside", 
+          description: "Velkommen til FooFest 2025!"
+      }
+  };
+}

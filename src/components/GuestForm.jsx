@@ -2,9 +2,9 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { addGuest } from "@/lib/supabase";
-import styles from "@/styles/GuestForm.module.css"
+import styles from "@/styles/GuestForm.module.css";
 
-const GuestForm = ({onConfirm}) => {
+const GuestForm = ({ onConfirm }) => {
   const [mainGuest, setMainGuest] = useState({
     fornavn: "",
     efternavn: "",
@@ -44,11 +44,11 @@ const GuestForm = ({onConfirm}) => {
   // Håndter ændringer i gæsteformularerne
   const handleGuestChange = (index, e) => {
     const { name, value } = e.target;
-  
+
     // Kopiér gæstelisten og opdater kun det specifikke indeks
     const updatedGuests = [...guests];
     updatedGuests[index] = { ...updatedGuests[index], [name]: value };
-  
+
     setGuests(updatedGuests); // Gem ændringerne
   };
 
@@ -56,7 +56,7 @@ const GuestForm = ({onConfirm}) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
-  
+
     // Valider hovedgæst og gæster
     const allGuests = [mainGuest, ...guests];
     for (const guest of allGuests) {
@@ -65,9 +65,9 @@ const GuestForm = ({onConfirm}) => {
         return;
       }
     }
-  
+
     console.log("Sending guests:", allGuests); // Log gæsterne før de sendes
-  
+
     try {
       // Send hver gæst til Supabase
       for (const guest of allGuests) {
@@ -80,15 +80,15 @@ const GuestForm = ({onConfirm}) => {
           mainGuest.betaling || ""
         );
       }
-  
+
       // Redirect til bekræftelsesside
-     router.push({
-      pathname: "/confirmation",
-  query: {
-    mainGuest: JSON.stringify(mainGuest),
-    guests: JSON.stringify(guests),
-  },
-    });
+      router.push({
+        pathname: "/confirmation",
+        query: {
+          mainGuest: JSON.stringify(mainGuest),
+          guests: JSON.stringify(guests),
+        },
+      });
     } catch (err) {
       setError("Der opstod en fejl under indsendelsen. Prøv igen.");
     }
@@ -108,6 +108,8 @@ const GuestForm = ({onConfirm}) => {
             onChange={handleMainGuestChange}
             required
             placeholder="Indtast dit fornavn"
+            aria-label="Fornavn"
+            autoComplete="given-name"
           />
 
           <label htmlFor="efternavn">Efternavn:</label>
@@ -119,6 +121,8 @@ const GuestForm = ({onConfirm}) => {
             onChange={handleMainGuestChange}
             required
             placeholder="Indtast dit efternavn"
+            aria-label="Efternavn"
+            autoComplete="family-name"
           />
 
           <label htmlFor="adresse">Adresse:</label>
@@ -130,6 +134,8 @@ const GuestForm = ({onConfirm}) => {
             onChange={handleMainGuestChange}
             required
             placeholder="Indtast din adresse"
+            aria-label="Adresse"
+            autoComplete="street-address"
           />
 
           <label htmlFor="email">Email:</label>
@@ -141,6 +147,8 @@ const GuestForm = ({onConfirm}) => {
             onChange={handleMainGuestChange}
             required
             placeholder="Indtast din email"
+            aria-label="Email"
+            autoComplete="email"
           />
 
           <label htmlFor="nummer">Telefonnummer:</label>
@@ -152,6 +160,8 @@ const GuestForm = ({onConfirm}) => {
             onChange={handleMainGuestChange}
             required
             placeholder="Indtast dit telefonnummer"
+            aria-label="Telefonnummer"
+            autoComplete="tel"
           />
 
           <fieldset className={styles.fieldset}>
@@ -164,6 +174,7 @@ const GuestForm = ({onConfirm}) => {
                 checked={mainGuest.betaling === "kort"}
                 onChange={handleMainGuestChange}
                 required
+                aria-label="Betal med kort"
               />
               Kort
             </label>
@@ -175,6 +186,7 @@ const GuestForm = ({onConfirm}) => {
                 checked={mainGuest.betaling === "mobilepay"}
                 onChange={handleMainGuestChange}
                 required
+                aria-label="Betal med MobilePay"
               />
               MobilePay
             </label>
@@ -182,42 +194,45 @@ const GuestForm = ({onConfirm}) => {
         </fieldset>
 
         {guests.map((guest, index) => (
-  <div key={index}>
-    <h3>Gæst {index + 2}</h3>
-    <label htmlFor={`guest-${index}-fornavn`}>Fornavn:</label>
-    <input
-      type="text"
-      id={`guest-${index}-fornavn`}
-      name="fornavn"
-      value={guest.fornavn}
-      onChange={(e) => handleGuestChange(index, e)}
-      required
-    />
+          <div key={index}>
+            <h3>Gæst {index + 2}</h3>
+            <label htmlFor={`guest-${index}-fornavn`}>Fornavn:</label>
+            <input
+              type="text"
+              id={`guest-${index}-fornavn`}
+              name="fornavn"
+              value={guest.fornavn}
+              onChange={(e) => handleGuestChange(index, e)}
+              required
+              aria-label={`Fornavn for gæst ${index + 2}`}
+            />
 
-    <label htmlFor={`guest-${index}-efternavn`}>Efternavn:</label>
-    <input
-      type="text"
-      id={`guest-${index}-efternavn`}
-      name="efternavn"
-      value={guest.efternavn}
-      onChange={(e) => handleGuestChange(index, e)}
-      required
-    />
+            <label htmlFor={`guest-${index}-efternavn`}>Efternavn:</label>
+            <input
+              type="text"
+              id={`guest-${index}-efternavn`}
+              name="efternavn"
+              value={guest.efternavn}
+              onChange={(e) => handleGuestChange(index, e)}
+              required
+              aria-label={`Efternavn for gæst ${index + 2}`}
+            />
 
-    <label htmlFor={`guest-${index}-adresse`}>Adresse:</label>
-    <input
-      type="text"
-      id={`guest-${index}-adresse`}
-      name="adresse"
-      value={guest.adresse}
-      onChange={(e) => handleGuestChange(index, e)}
-      required
-    />
-  </div>
+            <label htmlFor={`guest-${index}-adresse`}>Adresse:</label>
+            <input
+              type="text"
+              id={`guest-${index}-adresse`}
+              name="adresse"
+              value={guest.adresse}
+              onChange={(e) => handleGuestChange(index, e)}
+              required
+              aria-label={`Adresse for gæst ${index + 2}`}
+            />
+          </div>
         ))}
 
-{error && <p className={styles.error}>{error}</p>}
-<button type="submit">Send</button>
+        {error && <p className={styles.error}>{error}</p>}
+        <button type="submit">Send</button>
       </form>
     </div>
   );

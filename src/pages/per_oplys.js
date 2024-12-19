@@ -96,3 +96,12 @@ const personlige_oplysninger = () => {
 }
  
 export default personlige_oplysninger;
+
+export async function getServerSideProps() {
+  return {
+      props: {
+          title: "Oplysninger", 
+          description: "Indtast dine oplysninger her for at kunne gennemfører købet."
+      }
+  };
+}

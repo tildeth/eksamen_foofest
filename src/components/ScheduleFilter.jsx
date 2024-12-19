@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "@/styles/ScheduleFilter.module.css"
+import styles from "@/styles/ScheduleFilter.module.css";
 
 const ScheduleFilter = ({ days, scenes, onFilter }) => {
   const [selectedDay, setSelectedDay] = useState(""); // Track valgt dag
@@ -25,56 +25,68 @@ const ScheduleFilter = ({ days, scenes, onFilter }) => {
       sat: "LØRDAG",
       sun: "SØNDAG",
     };
-    return dayMap[shortDay] || shortDay; 
+    return dayMap[shortDay] || shortDay;
   };
 
   return (
     <div className={styles.scheduleFilter}>
-    {/* Dag Knapper */}
-    <div className={styles.filterIndhold}>
-      <h3>Vælg Dag:</h3>
-      <div className={styles.buttonGroup}>
-        <button
-          onClick={() => handleDayChange("")}
-          className={`${styles.filterSelect} ${selectedDay === "" ? styles.filterSelectActive : ""}`}
-        >
-          Alle Dage
-        </button>
-        {days.map((day) => (
+      {/* Dag Knapper */}
+      <div className={styles.filterIndhold}>
+        <h3>Vælg Dag:</h3>
+        <div className={styles.buttonGroup}>
           <button
-            key={day}
-            onClick={() => handleDayChange(day)}
-            className={`${styles.filterSelect} ${selectedDay === day ? styles.filterSelectActive : ""}`}
+            aria-label="vælg alle dage knap"
+            onClick={() => handleDayChange("")}
+            className={`${styles.filterSelect} ${
+              selectedDay === "" ? styles.filterSelectActive : ""
+            }`}
           >
-            {getFullDayName(day)}
+            Alle Dage
           </button>
-        ))}
+          {days.map((day) => (
+            <button
+              aria-label="vælg dag knap"
+              key={day}
+              onClick={() => handleDayChange(day)}
+              className={`${styles.filterSelect} ${
+                selectedDay === day ? styles.filterSelectActive : ""
+              }`}
+            >
+              {getFullDayName(day)}
+            </button>
+          ))}
+        </div>
       </div>
-    </div>
 
-    {/* Scene Knapper */}
-    <div className={styles.filterIndhold}>
-      <h3>Vælg Scene:</h3>
-      <div className={styles.buttonGroup}>
-        <button
-          onClick={() => handleSceneChange("")}
-          className={`${styles.filterSelect} ${selectedScene === "" ? styles.filterSelectActive : ""}`}
-        >
-          ALLE SCENER
-        </button>
-        {scenes.map((scene) => (
+      {/* Scene Knapper */}
+      <div className={styles.filterIndhold}>
+        <h3>Vælg Scene:</h3>
+        <div className={styles.buttonGroup}>
           <button
-            key={scene}
-            onClick={() => handleSceneChange(scene)}
-            className={`${styles.filterSelect} ${selectedScene === scene ? styles.filterSelectActive : ""}`}
+            aria-label="knap til valg af alle scener"
+            onClick={() => handleSceneChange("")}
+            className={`${styles.filterSelect} ${
+              selectedScene === "" ? styles.filterSelectActive : ""
+            }`}
           >
-            {scene}
+            ALLE SCENER
           </button>
-        ))}
+          {scenes.map((scene) => (
+            <button
+              key={scene}
+              aria-label="knap ti valg af scene"
+              onClick={() => handleSceneChange(scene)}
+              className={`${styles.filterSelect} ${
+                selectedScene === scene ? styles.filterSelectActive : ""
+              }`}
+            >
+              {scene}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
 };
 
 export default ScheduleFilter;

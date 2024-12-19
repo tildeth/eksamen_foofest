@@ -24,3 +24,12 @@ const ReservationExpired = () => {
 };
 
 export default ReservationExpired;
+
+export async function getServerSideProps() {
+  return {
+      props: {
+          title: "Annulleret køb", 
+          description: "Dit køb overskred vores tidsgrænse til at gennemføre købet. Du vil blive viderstillet om 5 sekunder"
+      }
+  };
+}

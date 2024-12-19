@@ -1,6 +1,6 @@
 
 .backButton {
-    background-color: var(--primary-color-light); 
+    background-color: var(--background-color-light); 
     color: var(--text-color-light); 
     font-family: "museo-sans", sans-serif;
     border: none;

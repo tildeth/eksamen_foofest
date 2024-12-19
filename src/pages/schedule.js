@@ -157,3 +157,13 @@ const Schedule = ({ schedule, bands, error }) => {
 };
 
 export default Schedule;
+
+
+export async function getServerSideProps() {
+  return {
+      props: {
+          title: "Program", 
+          description: "Se alle bands der spiller på FooFest 2025!"
+      }
+  };
+}

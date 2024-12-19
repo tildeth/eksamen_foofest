@@ -13,7 +13,7 @@ const BackButton = () => {
   };
 
   return (
-    <button onClick={handleGoBack} className={styles.backButton}>
+    <button onClick={handleGoBack} className={styles.backButton} aria-label="Tilbage til forrige side">
       <FaArrowLeft className={styles.backButtonIcon} />
       Tilbage
     </button>

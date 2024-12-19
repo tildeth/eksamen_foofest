@@ -1,7 +1,7 @@
 import React from "react";
 import { useBooking } from "@/context/BookingContext";
-import { FaShoppingCart } from "react-icons/fa"; 
-import styles from '@/styles/Cart.module.css'; 
+import { FaShoppingCart } from "react-icons/fa";
+import styles from "@/styles/Cart.module.css";
 import Link from "next/link";
 
 const Cart = () => {
@@ -9,13 +9,11 @@ const Cart = () => {
 
   return (
     <div className={styles.cartContainer}>
-      <Link href="/billet">
-      <FaShoppingCart className={styles.cartIcon} />
-      {totalTickets > 0 && (
-        <div className={styles.ticketCount}>
-          {totalTickets}
-        </div>
-      )}
+      <Link aria-label="Gå til billetkøb" href="/billet">
+        <FaShoppingCart className={styles.cartIcon} />
+        {totalTickets > 0 && (
+          <div className={styles.ticketCount}>{totalTickets}</div>
+        )}
       </Link>
     </div>
   );

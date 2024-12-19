@@ -52,7 +52,7 @@ const Confirmation = () => {
           <p>Tjek programmet ud her: </p>
 
           <Link href="/schedule">
-            <button className={styles.programLink}>Program</button>
+            <button aria-label="Program knap" className={styles.programLink}>Program</button>
           </Link>
         </div>
       </div>
@@ -61,3 +61,12 @@ const Confirmation = () => {
 };
 
 export default Confirmation;
+
+export async function getServerSideProps() {
+  return {
+      props: {
+          title: "Bekræftelse", 
+          description: "Bekræftelse på gennemført køb. Tjek vores program ud!"
+      }
+  };
+}
